@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="not-ie" lang="en">
+<!--<![endif]-->
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="utf-8">
+    <title>Muhammad Din Nursery Farm</title>
+    <meta name="description" content="Muhammad Din Nursery Farm">
+    <meta name="keywords" content="Buy online plant of every kind">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if (gte IE 9)|!(IE)]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <![endif]-->
+    <!-- Favicon -->
+    <link href="~/img/favicon.ico" rel="icon" type="image/png">
+
+    <!-- Styles -->
+    <link href="~/css/styles.css" rel="stylesheet">
+    <link href="~/css/bootstrap-override.css" rel="stylesheet">
+
+    <!-- Font Avesome Styles -->
+    <link href="~/css/font-awesome/font-awesome.css" rel="stylesheet">
+    <!--[if IE 7]>
+        <link href="~/css/font-awesome/font-awesome-ie7.min.css" rel="stylesheet">
+    <![endif]-->
+    <!-- FlexSlider Style -->
+    <link rel="stylesheet" href="~/css/flexslider.css" type="text/css" media="screen">
+
+    <!-- Internet Explorer condition - HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="row t-container">
+
+                <!-- Logo -->
+                <div class="span3">
+                    <div class="logo">
+                        <a href="index.htm"><img src="~/img/logo-header.png" alt=""></a>
+                    </div>
+                </div>
+
+                <div class="span9">
+                    <div class="row space60"></div>
+                    <nav id="nav" role="navigation">
+                        <a href="#nav" title="Show navigation">Show navigation</a>
+                        <a href="#" title="Hide navigation">Hide navigation</a>
+                        <ul class="clearfix">
+                            <li class="active"><a href="~/Home/index" title="" style="font-weight:700">Home</a></li>
+                            <li><a href="" title="" style="font-weight:700">About Us</a></li>
+                            <li><a href="#footer" title="" style="font-weight:700">Contact</a></li>
+                            <li><a href="" title="" style="font-weight:700">Services</a></li>
+                            <li>
+                                <a href="" title="" style="font-weight:700"><span>Products</span></a>
+                                <ul>
+                                    <!-- Submenu -->
+                                    <li><a href="~/Home/indoor" title="" style="font-weight:700">Indoor</a></li>
+                                    <li><a href="~/Home/outdoor" title="" style="font-weight:700">Outdoor</a></li>
+                                    <li><a href="~/Home/trees" title="" style="font-weight:700">Trees</a></li>
+                                    <li><a href="~/Home/Bonsai" title="" style="font-weight:700">Bonsai</a></li>
+                                    <li><a href="~/Home/criper" title="" style="font-weight:700">Cripers</a></li>
+                                    <li><a href="~/Home/Shrubs" title="" style="font-weight:700">Shrubs</a></li>
+                                </ul> <!-- End Submenu -->
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="row space40"></div>
+
+        </div>
+
+    </header>
+    <!-- Header End -->
+    <!-- Content -->
+    <section id="titlebar">
+        <!-- Container -->
+        <div class="container">
+
+            <div class="eight columns">
+                <h3 class="left" style="color:#fff;font-weight:900">Indoor</h3>
+            </div>
+
+            <div class="eight columns">
+                <nav id="breadcrumbs">
+                    <ul>
+                        <li style="color:#fff;font-weight:700">You are here:</li>
+                        <li><a href="#" style="color:#fff;font-weight:900">Home</a></li>
+                        <li style="color:#fff;font-weight:900">Stores</li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+        <!-- Container / End -->
+    </section>
+    <div id="content">
+        <div class="container">
+
+            <div class="row">
+                <div class="span12">
+                    <h4>Looking our photo gallery page?</h4>
+                    <p>Select Product and Place your order</p>
+
+
+
+                    <div class="row">
+                        <div class="span12">
+                            <!-- portfolio filter -->
+
+
+                            <section class="row" id="portfolio-items">
+                                <ul class="portfolio">
+                                    @foreach (var img in Model)
+                                    {
+                                        string id = " ";
+                                        if (img.name == null)
+                                        {
+                                            continue;
+                                        }
+                                        <li>
+
+                                            <article class="span3 project" data-tags="photography">
+                                                <form method="post" action="~/Home/SubmitOrder">
+                                                    <div class="square-1">
+                                                        <div class="img-container">
+
+                                                            @{
+                                                               id = img.name + "," + "Indoor";
+                                                            }
+
+
+                                                            <a href="~/Home/SubmitOrder/@id"><img src="~/images/Indoor/@img.path" style="height:170px;width:240px" alt=""></a>
+
+
+
+                                                        </div>
+                                                        <h3>@img.name</h3>
+                                                        @img.details
+                                                    </div>
+                                                </form>
+                                            </article>
+                                        </li>
+                                    }
+
+
+                                </ul>
+                            </section>
+
+                            <!-- Content End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <!-- Content End -->
+    <!-- Footer -->
+    <footer id="footer" style="background:url(../img/ba.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="span5">
+                    <h3>Contact Form</h3>
+                    <div>
+                        <form class="form-main" name="ajax-form" id="ajax-form" action="~/Home/Add" method="post">
+                            <div id="ajaxsuccess">E-mail was successfully sent.</div>
+                            <div class="error" id="err-name">Please enter name</div>
+                            <input name="name" id="name" type="text" value="Name" onfocus="if(this.value == 'Name') this.value='';" onblur="if(this.value == '') this.value='Name';">
+
+                            <div class="error" id="err-email">Please enter e-mail</div>
+                            <div class="error" id="err-emailvld">E-mail is not a valid format</div>
+                            <input name="email" id="email" type="text" value="E-mail" onfocus="if(this.value == 'E-mail') this.value='';" onblur="if(this.value == '') this.value='E-mail';">
+
+                            <div class="error" id="err-message">Please enter message</div>
+                            <textarea name="message" id="message" onfocus="if(this.value == 'Message') this.value='';" onblur="if(this.value == '') this.value='Message';">Message</textarea><br>
+                            <div>
+                                <div class="error" id="err-form">There was a problem validating the form please check!</div>
+                                <div class="error" id="err-timedout">The connection to the server timed out!</div>
+                                <div class="error" id="err-state"></div>
+                            </div>
+                            <button id="send" class="btn f-right">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                <div id="map" style="background-color:#fff">
+
+
+
+                    <iframe class="googlemaps" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d380510.6741687111!2d-88.01234121699822!3d41.83390417061058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1455598377120" frameborder="0" style="height:100%;width:100%"></iframe>
+
+
+
+
+                </div>
+
+            </div>
+            <div style=" height: 100px; width: 100%">
+                <table>
+                    <tr>
+                        <td><p style="color: #fff; font-weight: 700; text-align: left; font-size:x-large;">Address:</p></td>
+                        <td><em style="color: #00FFFF; font-weight: 700; font-size:large;">Muhammad Din Nursery Farm Multan Road near Landa Phatak Pattoki</em></td>
+                        <td><p style="color: #fff; font-weight: 700; font-size:x-large; text-align: left">Contact:</p></td>
+                        <td><em style="color: #00FFFF; font-weight: 700; font-size: large;">Sohan Ali Dogar: 03015740682<br>mssdogar@gmail.com</em></td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="row space50"></div>
+            <div class="row">
+                <div class="span6">
+                    <div class="logo-footer">
+                        Design by <a href="">Muhammad Saleem Sharif</a>
+                    </div>
+                </div>
+                <div class="span6 right">
+                    &copy; 2020. All rights reserved.
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- Footer End -->
+    <!-- JavaScripts -->
+    <script type="text/javascript" src="~/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="~/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/js/functions.js"></script>
+    <script type="text/javascript" defer src="~/js/jquery.flexslider.js"></script>
+
+</body>
+</html>

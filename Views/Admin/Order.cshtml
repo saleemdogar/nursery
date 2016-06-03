@@ -1,0 +1,76 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <!-- Custom Theme files -->
+    <link href="~/AdminCss/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Custom Theme files -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Muhammad Din Nuersery Farm" />
+    <!--Google Fonts-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Google Fonts-->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+    <!--header start here-->
+    <div class="login-form">
+        <div class="top-login">
+            <span><img src="../AdminImg/group.png" alt="" /></span>
+
+        </div>
+        <h1>All Messages</h1>
+        <h1 style="color:red">@TempData["message"]</h1>
+        <div class="login-top">
+
+
+            <div class="row">
+
+
+                <div class="col-md-1">
+                    <table class="" style="column-span: inherit; column-span: inherit;border: 3px solid gray background-color:#fff"
+                     border="1">
+                        <tr style="color: #fff;border: 3px solid gray">
+                            
+                            <th style="border: 3px solid gray"><h5>Name</h5></th>
+                            
+                            <th style="border: 3px solid gray"><h5>Email/Phone</h5></th>
+                           
+                            <th style="border: 3px solid gray"><h5>Message</h5></th>
+                            
+                            <th style="border: 3px solid gray"><h5>Date-Time</h5></th>
+                            <th style="border: 3px solid gray"><h5>Action</h5></th>
+                        </tr>
+                        @foreach (var m in Model)
+                        {
+                            <tr style="color: #00ffff;">
+                                <td style="border: 3px solid gray">@m.Name</td>
+                                
+                                <td style="border: 3px solid gray">@m.Phone</td>
+                                
+                                <td style="border: 3px solid gray">@m.Message</td>
+                                
+                                <td style="border: 3px solid gray">@m.Date_Time</td>
+                                <td style="border: 3px solid gray"><a class="btn btn-lg-2" href="~/Admin/DeleteOrder/@m.Name">Delete</a></td>
+                            </tr>
+
+                        }
+
+                    </table>
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+        <p class="copy">© 2016 Muhammad Din Nuersery Farm . All rights reserved | Design by  <a href="http://Developers.mdinnursery.com/" target="_blank">Muhammad Saleem Sharif</a></p>
+    </div>
+    <!--header start here-->
+</body>
+</html>

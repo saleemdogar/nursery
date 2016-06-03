@@ -1,0 +1,92 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <!-- Custom Theme files -->
+    <link href="~/AdminCss/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Custom Theme files -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Muhammad Din Nuersery Farm" />
+    <!--Google Fonts-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Google Fonts-->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+    <!--header start here-->
+    <div class="login-form">
+        <div class="top-login">
+            <span><img src="../AdminImg/group.png" alt="" /></span>
+
+        </div>
+        <h1>@ViewBag.type</h1>
+        
+        <div class="login-top">
+
+
+            <div class="row">
+
+
+                <div class="col-md-1">
+                    <table class="" style="column-span:inherit;column-span:inherit; background-color:#fff;border:3px solid gray">
+                        <tr style="color: #0026ff; border: 3px solid gray">
+
+                            <th style="border: 3px solid gray"><h5>Images</h5></th>
+                            <th style="border: 3px solid gray"><h5>Name</h5></th>
+
+                            <th style="border: 3px solid gray"><h5>Details</h5></th>
+                            <th style="border: 3px solid gray"><h5>Action</h5></th>
+                            <th style="border: 3px solid gray"><h5>Action</h5></th>
+
+                        </tr>
+                        @foreach (var m in Model)
+                        {
+                            if (m.name == null)
+                            {
+                                continue;
+                            }                        
+                            if(ViewBag.type == "Criper")
+                            {
+
+                                string id = m.name + "," + ViewBag.type; 
+                                <tr style="color: #161716;">
+                                <td style="border: 3px solid gray"><img src="~/images/@ViewBag.type/@m.link" style="height:50px;width:100px;"></td>
+                                <td style="border: 3px solid gray">@m.name</td>
+                                <td style="border: 3px solid gray">@m.Description</td>
+                                <td style="border: 3px solid gray"><a class="btn btn-lg-2"style="color:#ff6a00" href="~/Admin/UpdatePhoto/@id">Update</a></td>   
+                                <td style="border: 3px solid gray"><a class="btn btn-lg-2" href="~/Admin/DeleteImage/@id">Remove</a></td>
+                                  
+                             </tr>
+
+                            }
+                             else
+                             {
+                                 string id = m.name+","+ ViewBag.type;
+                                 <tr style="color: #161716;">
+                                 <td style="border: 3px solid gray"><img src="~/images/@ViewBag.type/@m.path" style="height:50px;width:100px;"></td>
+                                 <td style="border: 3px solid gray">@m.name</td>
+                                 <td style="border: 3px solid gray">@m.details</td>
+                                 <td style="border: 3px solid gray"><a class="btn btn-lg-2" href="~/Admin/UpdatePhoto/@id">Update</a></td>
+                                 <td style="border: 3px solid gray"><a class="btn btn-lg-2" href="~/Admin/DeleteImage/@id">Remove</a></td>
+                                 </tr>
+                             }
+                           }
+
+                            </table>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+                <p class="copy">© 2016 Muhammad Din Nuersery Farm . All rights reserved | Design by  <a href="http://Developers.mdinnursery.com/" target="_blank">Muhammad Saleem Sharif</a></p>
+            </div>
+            <!--header start here-->
+        </body>
+        </html>
